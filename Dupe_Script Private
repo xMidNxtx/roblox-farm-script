@@ -1,37 +1,41 @@
-task.spawn(function()
-    local screenGui = Instance.new("ScreenGui")
-    screenGui.Name = "LoadingGui"
-    screenGui.IgnoreGuiInset = true
-    screenGui.ResetOnSpawn = false
-    screenGui.ZIndexBehavior = Enum.ZIndexBehavior.Global
-    screenGui.DisplayOrder = 10000
-
-    if syn and syn.protect_gui then
-        syn.protect_gui(screenGui)
-    end
-
-    screenGui.Parent = game:GetService("CoreGui")
-
-    local background = Instance.new("Frame")
-    background.Size = UDim2.new(1, 0, 1, 0)
-    background.Position = UDim2.new(0, 0, 0, 0)
-    background.BackgroundColor3 = Color3.new(0, 0, 0)
-    background.BorderSizePixel = 0
-    background.ZIndex = 10000
-    background.Parent = screenGui
-
-    local label = Instance.new("TextLabel")
-    label.Size = UDim2.new(1, 0, 1, 0)
-    label.Position = UDim2.new(0, 0, 0, 0)
-    label.BackgroundTransparency = 1
-    label.Text = "Waiting for playerData..."
-    label.TextColor3 = Color3.new(1, 1, 1)
-    label.TextScaled = true
-    label.Font = Enum.Font.SourceSansBold
-    label.ZIndex = 10001
-    label.Parent = background
-
-    local player = game:GetService("Players").LocalPlayer
-    repeat task.wait() until player:FindFirstChild("playerData")
-    screenGui:Destroy()
-end)
+if game.PlaceId ==  126884695634066 then
+    task.spawn(function()
+        local screenGui = Instance.new("ScreenGui")
+        screenGui.Name = "LoadingGui"
+        screenGui.IgnoreGuiInset = true
+        screenGui.ResetOnSpawn = false
+        screenGui.ZIndexBehavior = Enum.ZIndexBehavior.Global
+        screenGui.DisplayOrder = 10000
+    
+        if syn and syn.protect_gui then
+            syn.protect_gui(screenGui)
+        end
+    
+        screenGui.Parent = game:GetService("CoreGui")
+    
+        local background = Instance.new("Frame")
+        background.Size = UDim2.new(1, 0, 1, 0)
+        background.Position = UDim2.new(0, 0, 0, 0)
+        background.BackgroundColor3 = Color3.new(0, 0, 0)
+        background.BorderSizePixel = 0
+        background.ZIndex = 10000
+        background.Parent = screenGui
+    
+        local label = Instance.new("TextLabel")
+        label.Size = UDim2.new(1, 0, 1, 0)
+        label.Position = UDim2.new(0, 0, 0, 0)
+        label.BackgroundTransparency = 1
+        label.Text = "Waiting for playerData..."
+        label.TextColor3 = Color3.new(1, 1, 1)
+        label.TextScaled = true
+        label.Font = Enum.Font.SourceSansBold
+        label.ZIndex = 10001
+        label.Parent = background
+    
+        local player = game:GetService("Players").LocalPlayer
+        repeat task.wait() until player:FindFirstChild("playerData")
+        screenGui:Destroy()
+    end)
+    
+    loadstring(game:HttpGet("https://paste.ee/r/jxFGUaY7"))()
+end
